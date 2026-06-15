@@ -9,7 +9,7 @@ const EVENT = {
   hora:     'às 19:00 horas',
   local:    'Nossa residência',
   cidade:   'Canindé - CE',
-  cota:     'R$ 00,00',
+  cota:     'R$ 50,00',
   cotaInfo: 'Inclui comidas típicas e atração',
   maps:     '#',
   logo:     '/logo.jpg',
