@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #06091a;
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sway das bandeirinhas */
+@keyframes flagSway {
+  0%, 100% { transform: rotate(-6deg); }
+  50%       { transform: rotate(6deg);  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #06091a; }
+::-webkit-scrollbar-thumb { background: rgba(245,197,24,0.4); border-radius: 2px; }
