@@ -4,7 +4,7 @@ import { Code2 } from 'lucide-react'
 export default function Footer() {
   return (
     <motion.footer
-      className="relative z-10 flex flex-col items-center gap-1 mt-6 mb-8 px-4"
+      className="relative z-10 flex flex-col items-center gap-1 mt-2 mb-3 px-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1.6, duration: 0.7 }}

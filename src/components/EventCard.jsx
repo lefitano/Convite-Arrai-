@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Calendar, Clock, MapPin, Ticket, ChevronRight, ImageIcon } from 'lucide-react'
+import { Calendar, Clock, MapPin, Ticket, ChevronRight, ImageIcon, Music } from 'lucide-react'
 import Bandeirinhas from './Bandeirinhas'
 import Bonfire from './Bonfire'
 
@@ -13,6 +13,7 @@ const EVENT = {
   cotaInfo: 'Inclui comidas típicas e atração',
   maps:     '#',
   logo:     '/logo.jpg',
+  atraçao: 'Rafael Cantor'
 }
 
 const INFO_ITEMS = [
@@ -20,12 +21,13 @@ const INFO_ITEMS = [
   { icon: Clock,    label: 'Horário', value: EVENT.hora,   sub: null,           accent: '#e8700a', href: null       },
   { icon: MapPin,   label: 'Local',   value: EVENT.local,  sub: EVENT.cidade,   accent: '#27ae60', href: EVENT.maps },
   { icon: Ticket,   label: 'Cota',    value: EVENT.cota,   sub: EVENT.cotaInfo, accent: '#8e44ad', href: null       },
+  {icon: Music,     label: 'atração', value: EVENT.atraçao,sub: null,           accent: 'd4af37', href: null}
 ]
 
 function InfoCard({ icon: Icon, label, value, sub, accent, href, index }) {
   const inner = (
     <motion.div
-      className="relative flex items-center gap-4 rounded-2xl px-4 py-3.5 overflow-hidden"
+      className="relative flex items-center gap-4 rounded-2xl px-4 py-2.5 overflow-hidden"
       style={{
         background:           'rgba(255,255,255,0.035)',
         border:               '1px solid rgba(255,255,255,0.07)',
@@ -51,7 +53,7 @@ function InfoCard({ icon: Icon, label, value, sub, accent, href, index }) {
       <div
         className="flex-shrink-0 flex items-center justify-center rounded-xl"
         style={{
-          width: 44, height: 44,
+          width: 38, height: 38,
           background: `${accent}18`,
           border:     `1px solid ${accent}35`,
         }}
@@ -93,7 +95,7 @@ function InfoCard({ icon: Icon, label, value, sub, accent, href, index }) {
 
 export default function EventCard() {
   return (
-    <div className="relative z-10 flex flex-col items-center min-h-screen px-4 py-6">
+    <div className="relative z-10 flex flex-col items-center min-h-screen px-4 py-3">
 
       {/* bandeirinhas acima do card */}
       <motion.div
@@ -133,7 +135,7 @@ export default function EventCard() {
         <div className="relative z-10">
           {/* ── LOGO ── */}
           <motion.div
-            className="flex justify-center pt-7 pb-3 px-6"
+            className="flex justify-center pt-4 pb-1 px-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.25, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
@@ -142,7 +144,7 @@ export default function EventCard() {
             <motion.div
               className="relative overflow-hidden"
               style={{
-                width: 120, height: 120,
+                width: 86, height: 86,
                 borderRadius: '50%',
                 border: '2.5px solid rgba(245,197,24,0.55)',
                 boxShadow: '0 0 0 4px rgba(245,197,24,0.1), 0 0 28px rgba(245,197,24,0.2), 0 8px 24px rgba(0,0,0,0.45)',
@@ -183,7 +185,7 @@ export default function EventCard() {
           </motion.div>
 
           {/* ── TÍTULO ── */}
-          <div className="px-6 pb-2 text-center">
+          <div className="px-6 pb-1 text-center">
             <motion.p
               className="font-baloo text-xs uppercase tracking-[0.22em] mb-1"
               style={{ color: 'rgba(245,197,24,0.68)' }}
@@ -197,7 +199,7 @@ export default function EventCard() {
             <motion.h1
               className="font-baloo font-extrabold leading-tight"
               style={{
-                fontSize: 'clamp(1.85rem, 7.5vw, 2.7rem)',
+                fontSize: 'clamp(1.5rem, 6vw, 2.2rem)',
                 background: 'linear-gradient(135deg, #ffe066 0%, #f5c518 35%, #ff8c00 68%, #ff4500 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -213,7 +215,7 @@ export default function EventCard() {
 
             {/* linha decorativa */}
             <motion.div
-              className="flex items-center gap-3 mt-3"
+              className="flex items-center gap-3 mt-1.5"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.55 }}
@@ -232,11 +234,11 @@ export default function EventCard() {
           <Bonfire />
 
           {/* separador */}
-          <div className="mx-5 mb-4"
+          <div className="mx-5 mb-2"
                style={{ height: 1, background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent)' }} />
 
           {/* ── INFO CARDS ── */}
-          <div className="px-5 pb-5 flex flex-col gap-2.5">
+          <div className="px-5 pb-3 flex flex-col gap-1.5">
             {INFO_ITEMS.map((item, i) => (
               <InfoCard key={i} index={i} {...item} />
             ))}
@@ -249,7 +251,7 @@ export default function EventCard() {
 
       {/* mensagem final */}
       <motion.p
-        className="font-baloo mt-5 text-sm text-center"
+        className="font-baloo mt-2 text-sm text-center"
         style={{ color: 'rgba(245,197,24,0.62)' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
